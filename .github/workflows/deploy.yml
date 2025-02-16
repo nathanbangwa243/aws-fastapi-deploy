@@ -1,0 +1,28 @@
+name: Deploy FastAPI to AWS Lambda
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install AWS SAM CLI
+        run: |
+          sudo apt update && sudo apt install aws-sam-cli -y
+
+      - name: Build and deploy FastAPI app
+        run: |
+          cd mongodb_apis  # Navigate to the FastAPI project
+          sam build
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-1"

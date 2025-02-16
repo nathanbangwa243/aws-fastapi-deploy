@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  FastAPIFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: fastapi-lambda
+      Runtime: python3.10
+      Handler: app.main.handler  # Entry point for AWS Lambda
+      CodeUri: mongodb_apis/  # Set the correct path for the project
+      MemorySize: 512
+      Timeout: 30
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        ApiGateway:
+          Type: Api
+          Properties:
+            Path: /
+            Method: ANY

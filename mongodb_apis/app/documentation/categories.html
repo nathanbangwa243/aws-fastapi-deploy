@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Categories API Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swagger-ui {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .swagger-ui .topbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .swagger-ui .topbar h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .swagger-ui .topbar a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .swagger-ui .content {
+        flex: 1;
+        overflow: auto;
+        padding: 20px;
+      }
+
+      .swagger-ui .endpoints-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .swagger-ui .endpoint {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .swagger-ui .endpoint h2 {
+        font-size: 18px;
+        margin-top: 0;
+      }
+
+      .swagger-ui .endpoint .method {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .swagger-ui .endpoint .url {
+        font-size: 16px;
+        margin-top: 5px;
+      }
+
+      .swagger-ui .endpoint .request-body {
+        background-color: #e0e0e0;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .swagger-ui .endpoint .request-body pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: auto;
+      }
+
+      .swagger-ui .endpoint .response-examples {
+        background-color: #e0e0e0;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .swagger-ui .endpoint .response-examples pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="swagger-ui">
+      <div class="topbar">
+        <h1>Categories API Documentation</h1>
+        <a href="#">SwaggerHub</a>
+      </div>
+
+      <div class="content">
+        <ul class="endpoints-list">
+          <li class="endpoint">
+            <h2>Create a Category</h2>
+            <div class="method">POST</div>
+            <div class="url">/categories</div>
+            <div class="request-body">
+              <h3>Request Body</h3>
+              <pre>{
+  "name": "string",
+  "description": "string"
+}</pre>
+            </div>
+            <div class="response-examples">
+              <h3>Response Examples</h3>
+              <pre>{
+  "id": 1,
+  "name": "string",
+  "description": "string"
+}</pre>
+            </div>
+          </li>
+          <li class="endpoint">
+            <h2>Get All Categories</h2>
+            <div class="method">GET</div>
+            <div class="url">/categories</div>
+            <div class="response-examples">
+              <h3>Response Examples</h3>
+              <pre>[
+  {
+    "id": 1,
+    "name": "string",
+    "description": "string"
+  },
+  {
+    "id": 2,
+    "name": "string",
+    "description": "string"
+  }
+]</pre>
+            </div>
+          </li>
+          <li class="endpoint">
+            <h2>Get a Category by ID</h2>
+            <div class="method">GET</div>
+            <div class="url">/categories/{category_id}</div>
+            <div class="response-examples">
+              <h3>Response Examples</h3>
+              <pre>{
+  "id": 1,
+  "name": "string",
+  "description": "string"
+}</pre>
+            </div>
+          </li>
+          <li class="endpoint">
+            <h2>Update a Category</h2>
+            <div class="method">PUT</div>
+            <div class="url">/categories/{category_id}</div>
+            <div class="request-body">
+              <h3>Request Body</h3>
+              <pre>{
+  "name": "string",
+  "description": "string"
+}</pre>
+            </div>
+            <div class="response-examples">
+              <h3>Response Examples</h3>
+              <pre>{
+  "id": 1,
+  "name": "string",
+  "description": "string"
+}</pre>
+            </div>
+          </li>
+          <li class="endpoint">
+            <h2>Delete a Category</h2>
+            <div class="method">DELETE</div>
+            <div class="url">/categories/{category_id}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
