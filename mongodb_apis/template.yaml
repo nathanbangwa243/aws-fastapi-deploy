@@ -8,7 +8,7 @@ Resources:
       FunctionName: fastapi-lambda
       Runtime: python3.10
       Handler: app.main.handler  # Entry point for AWS Lambda
-      CodeUri: mongodb_apis/  # Set the correct path for the project
+      CodeUri: .  # Set the correct path for the project
       MemorySize: 512
       Timeout: 30
       Policies:
