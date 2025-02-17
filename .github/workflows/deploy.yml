@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: AWS GoBackend  # Associer le job à l'environnement contenant les secrets
 
     steps:
       - name: Checkout repository
