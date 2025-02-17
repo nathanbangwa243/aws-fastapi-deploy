@@ -3,11 +3,11 @@
 from fastapi import FastAPI
 from mangum import Mangum
 
-if __name__ == "app.main":
-    # for tests purpose
-    from .routers import *
-else:
-    from routers import *
+# if __name__ == "app.main":
+#     # for tests purpose
+#     from .routers import *
+# else:
+#     from routers import *
 app = FastAPI()
 
 @app.get("/")
@@ -16,7 +16,7 @@ async def read_main():
 
 # ADD ROUTERS
 
-app.include_router(categories.router)
+# app.include_router(categories.router)
 
 
 # Add Mangum Handler
