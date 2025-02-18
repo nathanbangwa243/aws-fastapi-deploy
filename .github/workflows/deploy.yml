@@ -41,7 +41,7 @@ jobs:
 
       - name: Build and deploy FastAPI app
         run: |
-          cd mongodb_apis  # Navigate to the FastAPI project
+          cd mongodb_apis  # Navigate to the FastAPI project.
           sam build
               sam deploy --stack-name fastapi-stack --region $AWS_REGION --resolve-s3 \
               --force-upload --capabilities CAPABILITY_IAM --no-confirm-changeset --no-fail-on-empty-changeset
