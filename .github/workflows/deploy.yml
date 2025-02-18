@@ -42,7 +42,7 @@ jobs:
         run: |
           cd mongodb_apis  # Navigate to the FastAPI project
           sam build
-          sam deploy --stack-name fastapi-stack --region $AWS_REGION --resolve-s3 \
+          sam deploy --stack-name gobackend-fastapi-stack --region $AWS_REGION --resolve-s3 \
             --capabilities CAPABILITY_IAM --no-confirm-changeset --no-fail-on-empty-changeset
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
